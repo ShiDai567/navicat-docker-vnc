@@ -14,4 +14,7 @@ services:
       - DISPLAY_WIDTH=1920
       - DISPLAY_HEIGHT=1080
       - KEEP_APP_RUNNING=1
+      - VNC_PASSWORD=navicat
+      - WEB_AUTHENTICATION_USERNAME=navicat
+      - WEB_AUTHENTICATION_PASSWORD=navicat
     restart: unless-stopped
