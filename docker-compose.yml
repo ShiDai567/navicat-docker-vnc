@@ -1,0 +1,17 @@
+services:
+  navicat:
+    build: .
+    image: navicat
+    container_name: navicat
+    ports:
+      - 5800:5800   # Web GUI
+      - 5900:5900   # VNC
+    volumes:
+      - ./data/config:/root/.config/navicat
+      - ./data/logs:/config/log
+    environment:
+      - TZ=Asia/Shanghai
+      - DISPLAY_WIDTH=1920
+      - DISPLAY_HEIGHT=1080
+      - KEEP_APP_RUNNING=1
+    restart: unless-stopped
