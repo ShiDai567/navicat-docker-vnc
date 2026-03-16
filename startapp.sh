@@ -7,4 +7,7 @@
  
 # echo "✅ 已重置试用期！"
 
+# 确保配置目录权限
+chmod -R 777 /root/.config/navicat 2>/dev/null || true
+
 exec /opt/navicat/AppRun

@@ -1,10 +1,12 @@
-# 生产环境：使用预构建镜像
+# 开发环境：本地构建镜像
 services:
   navicat:
-    image: ghcr.io/shidai567/navicat-docker-vnc:latest
-    container_name: navicat
+    build: .
+    image: navicat-dev
+    container_name: navicat-dev
     ports:
       - 5800:5800   # Web GUI
+      - 5900:5900   # VNC
     volumes:
       - ./data/config:/root/.config/navicat
       - ./data/logs:/config/log
@@ -13,5 +15,4 @@ services:
       - DISPLAY_WIDTH=1920
       - DISPLAY_HEIGHT=1080
       - KEEP_APP_RUNNING=1
-      - VNC_PASSWORD=${VNC_PASSWORD:-navicat}
     restart: unless-stopped
