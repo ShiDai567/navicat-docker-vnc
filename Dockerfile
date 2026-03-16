@@ -23,6 +23,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libglib2.0-0 \
     libpango-1.0-0 \
     libpangocairo-1.0-0 \
+    # 网络 / SSL 运行时依赖
+    libcurl4 \
+    libssl3 \
     && rm -rf /var/lib/apt/lists/*
 
 # 生成中文 locale
