@@ -19,6 +19,27 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxcb-icccm4 \
     libxcb-keysyms1 \
     libxcb-shape0 \
+    # 额外 xcb / X11 依赖（修复工具栏按钮崩溃）
+    libxcb-xinerama0 \
+    libxcb-randr0 \
+    libxcb-render-util0 \
+    libxcb-xfixes0 \
+    libxcb-sync1 \
+    libxcb-image0 \
+    libxcb-util1 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    libxtst6 \
+    # NSS / ATK / 其他运行时依赖
+    libnss3 \
+    libnspr4 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libdrm2 \
+    libgbm1 \
+    libasound2t64 \
     # GLib / Pango 运行时依赖
     libglib2.0-0 \
     libpango-1.0-0 \
