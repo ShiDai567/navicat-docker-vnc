@@ -62,6 +62,10 @@ RUN wget -q -O /tmp/navicat.AppImage \
     mv /tmp/squashfs-root /opt/navicat && \
     rm /tmp/navicat.AppImage
 
+# 修复 SSH: 基础镜像 HOME=/dev/null 导致无法写入 known_hosts
+ENV HOME=/config
+RUN mkdir -p /config/.ssh && chmod 700 /config/.ssh
+
 # 复制启动脚本
 COPY startapp.sh /startapp.sh
 RUN chmod +x /startapp.sh

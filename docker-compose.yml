@@ -4,11 +4,11 @@ services:
     image: ghcr.io/shidai567/navicat-docker-vnc:latest
     container_name: navicat
     ports:
-      - 5800:5800   # Web GUI
+      - 5800:5800 # Web GUI
     volumes:
-      - ./data/config:/root/.config/navicat
-      - ./data/logs:/config/log
+      - ./data:/config
     environment:
+      - HOME=/config
       - TZ=Asia/Shanghai
       - DISPLAY_WIDTH=1920
       - DISPLAY_HEIGHT=1080

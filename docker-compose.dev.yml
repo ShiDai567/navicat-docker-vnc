@@ -5,12 +5,12 @@ services:
     image: navicat-dev
     container_name: navicat-dev
     ports:
-      - 5800:5800   # Web GUI
-      - 5900:5900   # VNC
+      - 5800:5800 # Web GUI
+      - 5900:5900 # VNC
     volumes:
-      - ./data/config:/root/.config/navicat
-      - ./data/logs:/config/log
+      - ./data:/config
     environment:
+      - HOME=/config
       - TZ=Asia/Shanghai
       - DISPLAY_WIDTH=1920
       - DISPLAY_HEIGHT=1080
