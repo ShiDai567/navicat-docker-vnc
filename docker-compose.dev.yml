@@ -8,10 +8,12 @@ services:
       - 5800:5800 # Web GUI
       - 5900:5900 # VNC
     volumes:
-      - ./data:/config
+      - ./data:/root
     environment:
-      - HOME=/config
       - TZ=Asia/Shanghai
+      - HOME=/root
+      - USER_ID=0
+      - GROUP_ID=0
       - DISPLAY_WIDTH=1920
       - DISPLAY_HEIGHT=1080
       - KEEP_APP_RUNNING=1

@@ -4,11 +4,11 @@
 # dconf reset -f /com/premiumsoft/navicat-premium/ 2>/dev/null
 # rm -f ~/.config/navicat/Premium/preferences.json
 # rm -f ~/.config/navicat/Premium/preferences.json.lock
- 
+
 # echo "✅ 已重置试用期！"
 
 # 修复 SSH: 基础镜像 HOME=/dev/null 导致无法写入 known_hosts
-export HOME=/config
+# export HOME=/root
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
 
